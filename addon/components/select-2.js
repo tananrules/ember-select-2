@@ -249,7 +249,7 @@ var Select2Component = Ember.Component.extend({
     options.initSelection = function(element, callback) {
       var value = element.val(),
           content = self.get("content"),
-          contentIsArrayProxy = Ember.ArrayProxy.detectInstance(content),
+          contentIsArrayProxy = content instanceof DS.ManyArray,
           multiple = self.get("multiple"),
           optionValuePath = self.get("optionValuePath");
 
